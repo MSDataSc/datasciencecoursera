@@ -92,7 +92,7 @@ library(plyr)
   tidyDT <- merge(trainDT,testDT,all=TRUE, by = c("SubjectID","ActivityID","ActivityLabel"))
   
   #Write the tidy data set into a file
-  write.csv(tidyDT,"TidyDataSet.csv")
+  write.table(tidyDT,"TidyDataSet.txt",row.name=FALSE)
   
   #Get the average of all cols by subject id, activity id and activity label
   aggTidyDT <- tidyDT[,lapply(.SD,mean,na.rm=TRUE),by=c("SubjectID","ActivityID","ActivityLabel")]
@@ -102,4 +102,4 @@ library(plyr)
   names(aggTidyDT) <- sub("^T","Average.T",cols)
   
   #Write the summarized tidy data set into a file
-  write.csv(aggTidyDT,"TidyDataSetSummary.csv")
+  write.table(aggTidyDT,"TidyDataSetSummary.txt",row.name=FALSE)
