@@ -20,15 +20,15 @@ activity.
 # Detailed explanation of the script below
 Steps to follow to process the raw data set and get to tidy data sets
 
-* Initialize Section:
+## Initialize Section:
 1. Step #1 First of all load all the dependent packages
 2. Step #2 Set parent directory where data files reside as the working directory
 
-* Section 1: Read the parameter files first
+## Section 1: Read the parameter files first
 3. Step #3 Read activity_tabels.txt file into actLabels. This will be used later for making the data more descriptive
 4. Step #4 Read the features.txt file into feats. This will be used to make the column names descriptive
 
-* Section 2: Read the test data set (raw data)
+## Section 2: Read the test data set (raw data)
 5. Step #5 Set working directory to “test” folder where test data set resides 
 6. Step #6 Read participant ids via file subject_test.txt into Stest
 7. Step #7 Rename the column to be descriptive
@@ -41,7 +41,7 @@ Steps to follow to process the raw data set and get to tidy data sets
 14. Step #14 Merge the subject ids, acticity id,label and the test data set via cbind
 15. Step #15 Add the "Test." prefix to columns names to differentiate test data from train data
 
-* Section 3: Read the train data set (raw data)
+## Section 3: Read the train data set (raw data)
 16. Step #16: Set working directory to the “train” folder where train data set resides Step #16: Read participant ids via file subject_train.txt file into Strain
 17. Step #17 Rename the column to be descriptive
 18. Step #18 Read the activity ids from train into a temp data table
@@ -54,12 +54,12 @@ section 1
 24. Step #24 Merge the subject ids, activity id,label and the train data set via cbind
 25. Step #25 Add the "Train." prefix to columns names to differentiate test data from train data
 
-* Section 4 - Merge the test and train data sets
+## Section 4 - Merge the test and train data sets
 26. Step #26 Revert the current working directory to the starting point.
 27. Step #27 Merge the train data set and the test data set to form the tidy data set 
 28. Step #28 Write the tidy data set into a text file “TidyDataSet.txt"
 
-* Section 5 - Create a summarized data set use the previous tidy data set to show average for all measures by participant and activity.
+## Section 5 - Create a summarized data set use the previous tidy data set to show average for all measures by participant and activity.
 29. Step #29 Get the average of all cols by subject id, activity id and activity label
 30. Step #30 Make the column names descriptive to reflect this data set is average of all columns 
 31. Step #31 Write the summarized tidy data set into a file TidyDataSetSummary.txt
